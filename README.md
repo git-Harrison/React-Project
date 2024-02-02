@@ -7,13 +7,14 @@
 - npm (Version 9.8.1)
 - React.js (Version 18.2.0)
 - SCSS
-
-## PackAge
-
 - TypeScript (Version 4.9.5)
 - React Hook
 - Redux
 - TanStack Query (v5)
+
+## PackAge
+- react-router-dom (Version 6.22.0) : `npm install react-router-dom@latest`
+
 
 ## Data
 
