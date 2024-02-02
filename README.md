@@ -3,14 +3,14 @@
 
 ## Spec
 
-- Node.js (18.15.0 이상)
-- npm (9.8.1 이상)
-- React.js (18.2 이상)
+- Node.js (Version 18.15.0)
+- npm (Version 9.8.1)
+- React.js (Version 18.2.0)
 - SCSS
 
 ## PackAge
 
-- TypeScript (4.7.4)
+- TypeScript (Version 4.9.5)
 - React Hook
 - Redux
 - TanStack Query (v5)
