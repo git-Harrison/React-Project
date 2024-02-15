@@ -14,6 +14,8 @@
 
 ## PackAge
 - react-router-dom (Version 6.22.0) : `npm install react-router-dom@latest`
+- react-slick (Version 0.30.1) : `npm install react-slick slick-carousel`
+- react-slick@types (Version 0.23.13) : `npm i --save-dev @types/react-slick`
 
 
 ## Data
@@ -25,9 +27,5 @@ Open [https://openapi.nexon.com](https://openapi.nexon.com) to view it in the br
 ## UI
 
 Main : [https://morevision.kr](https://morevision.kr)
-
-## NPM
-
-- swiper
 
 Sub : 미정
