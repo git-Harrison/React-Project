@@ -12,15 +12,16 @@ const UserSearch: React.FC = () => {
     async function searchNickName(){
         try {
             const response = await axios.get(`https://open.api.nexon.com/fconline/v1/id?nickname=${nickName}`);
-            // API 응답에서 사용자 정보 추출
-            const user: User = response.data;
-            // 추출된 사용자 정보를 상태에 설정
-            setSearchResult(user);
-            console.log("성공함", response);
+            if (response.data) {
+                const user: User = response.data;
+                setSearchResult(user);
+                console.log("성공함", response);
+            } else {
+                console.error("응답 데이터에 사용자 정보가 포함되어 있지 않습니다.");
+            }
         } catch (error) {
             console.error("실패함", error);
-            console.log(nickName)
-            
+            console.log(nickName);
         }
     }
     function handleInput(e: React.ChangeEvent<HTMLInputElement>){
