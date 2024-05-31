@@ -1,33 +1,34 @@
 import React, {useRef} from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import { Container } from 'react-bootstrap';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+
 const CategorySliderBanner = () => {
-    const sliderRef = useRef<Slider>(null);
+    
+// Swiper 모듈 초기화
+    // const sliderRef = useRef<Slider>(null);
 
-    const images = [
-        { id: 1, path: "/images/main-banner-01.jpg", alt: "1" , title:"키친"},
-        { id: 2, path: "/images/main-banner-02.jpg", alt: "2", title:"바스" },
-        { id: 3, path: "/images/main-banner-03.jpg", alt: "3", title:"도어" },
-        { id: 4, path: "/images/main-banner-04.jpg", alt: "4", title:"중문"},
-        { id: 5, path: "/images/main-banner-05.jpg", alt: "5", title:"창호" },
-    ];
-
-    const settings = {
-        speed: 500,
-        slidesToShow: 4.7,
-        slidesToScroll: 1,
-        infinite: false,
-        cssEase: "linear"
-    };
+    
   
     // 이미지 로딩이 안되면 에러 콘솔 띄우기
     const handleImageError = (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
         console.error(`Failed to load image: ${event.currentTarget.src}`);
         event.currentTarget.alt = "Image not available";  
     };
+     const images = [
+        { id: 1, path: "/images/img-kitchen.jpg", alt: "키친" , title:"키친"},
+        { id: 2, path: "/images/img-bath.jpg", alt: "바스", title:"바스" },
+        { id: 3, path: "/images/img-door.jpg", alt: "도어", title:"도어" },
+        { id: 4, path: "/images/img-interlockingDoor.jpg", alt: "중문", title:"중문"},
+        { id: 5, path: "/images/img-window.jpg", alt: "창호", title:"창호" },
+        { id: 6, path: "/images/img-wallFinish.jpg", alt: "몰딩/월/마루", title:"몰딩/월/마루"},
+        { id: 7, path: "/images/img-film.jpg", alt: "인테리어 필름", title:"인테리어 필름" },
+        { id: 8, path: "/images/img-built-in-closet.jpg", alt: "붙박이장", title:"붙박이장" },
+    ];
     return (
         <>
             <Container>
@@ -43,19 +44,23 @@ const CategorySliderBanner = () => {
                     </div>
                 </div>
             </Container>
-            <div className='sectionn-design'>
-                <Slider ref={sliderRef} {...settings}>
-                    {images.map((image) => (
-                        <div key={image.id}>
-                            <img src={image.path} alt={image.alt} onError={handleImageError} />
-                            <div className='slider-desc'>
-                                <div className='slider-desc__title'>
-                                    {image.title}
-                                </div>
-                            </div>
+           <div className="section-design">
+            <Swiper
+                spaceBetween={32}
+                slidesPerView={4.5}
+                navigation
+            >
+                {images.map((image) => (
+                <SwiperSlide key={image.id}>
+                    <img src={image.path} alt={image.alt} onError={handleImageError} />
+                    <div className='slider-desc'>
+                        <div className='slider-desc__title'>
+                            {image.title}
                         </div>
-                    ))}
-                </Slider>
+                    </div>
+                </SwiperSlide>
+                ))}
+            </Swiper>
             </div>
         </>
     );

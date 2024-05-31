@@ -166,10 +166,44 @@ img {
         letter-spacing: -1px;
         margin-top: 8px;
     }
+    
 }
-.sectionn-design{
+.section-design{
     margin-top: 60px;
-}
-.slick-list{
-    height: 600px;
+    .swiper{
+        padding-left: 120px;
+    }
+    .swiper-wrapper{
+        height: 600px;
+    }
+    .swiper-slide {
+        width: 418px !important;
+        position: relative;
+        .slider-desc{
+            position: absolute;
+            left: 46px;
+            bottom: 26px;
+            font-size: 26px;
+            color: #fff;
+            line-height: 34px;
+            letter-spacing: -.7px;
+        }
+    }
+    .swiper-button-prev{
+        width: 150px;
+        height: 150px;
+        background-color: transparent;
+        left: 75px;
+        &::after{
+            font-family: none;
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+            background-image: url('../../public/images/icon-main-drag.png');
+            background-size: cover;
+        }
+    }
+    .swiper-button-next{
+        display: none;
+    }
 }
