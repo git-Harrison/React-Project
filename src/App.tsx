@@ -11,7 +11,9 @@ import 'aos/dist/aos.css'; // AOS 스타일시트 가져오기
 function App() {
     useEffect(() => {
         AOS.init({
-          duration: 2000, // 애니메이션 지속 시간
+            duration: 1000, // 애니메이션 지속 시간
+            once: false, // 스크롤 할 때마다 애니메이션이 실행되도록 설정
+            offset: 100, // 트리거 시점 오프셋
         });
         AOS.refresh();
     }, []);

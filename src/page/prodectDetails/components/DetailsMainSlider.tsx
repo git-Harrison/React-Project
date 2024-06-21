@@ -47,6 +47,7 @@ const DetailsMainSlider: React.FC<DetailMainSliderProps> = ({ contents }) => {
                     ref={swiperRef}
                     spaceBetween={16}
                     slidesPerView={1}
+                    
                     navigation
                 >
                     {contents.map((content) => (
