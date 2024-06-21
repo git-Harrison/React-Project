@@ -16,6 +16,8 @@
 - react-router-dom (Version 6.22.0) : `npm install react-router-dom@latest`
 - react-slick (Version 0.30.1) : `npm install react-slick slick-carousel`
 - react-slick@types (Version 0.23.13) : `npm i --save-dev @types/react-slick`
+- swiper
+- aos
 - `npm install @types/axios --save-dev`
 
 ## Data

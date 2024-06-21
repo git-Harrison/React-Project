@@ -1,16 +1,41 @@
-import React, {useRef} from 'react';
+import React, {useRef, useEffect} from 'react';
 import { Container } from 'react-bootstrap';
+
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import { Link } from 'react-router-dom';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const CategorySliderBanner = () => {
+    const box1 = useRef(null);
+
+    useEffect(() => {
+        const element1 = box1.current;
     
-// Swiper 모듈 초기화
-    // const sliderRef = useRef<Slider>(null);
+        gsap.fromTo(
+          element1,
+          { y: 100, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 2,
+            scrollTrigger: {
+              trigger: element1,
+              start: "top 80%",
+              end: "top 20%",
+              toggleActions: "play none none reset",
+            },
+          }
+        );
+      }, []);
+
 
     
   
@@ -30,8 +55,9 @@ const CategorySliderBanner = () => {
         { id: 8, path: "/images/img-built-in-closet.jpg", alt: "붙박이장", title:"붙박이장" },
     ];
     return (
-        <>
+        <div ref={box1}>
             <Container>
+            {/* <Link to="/Kitchen">Kitchen</Link> */}
                 <div className='section design-textbox'>
                     <div className="design-textbox__title">
                         다양한 라이프스타일 속에서 최적화된 
@@ -56,13 +82,22 @@ const CategorySliderBanner = () => {
                     <div className='slider-desc'>
                         <div className='slider-desc__title'>
                             {image.title}
+                         
                         </div>
                     </div>
+                    {image.id === 1 && <Link to="/kitchen"></Link>}
+                    {image.id === 2 && <Link to="/bath"></Link>}
+                    {image.id === 3 && <Link to="/door"></Link>}
+                    {image.id === 4 && <Link to="/interlockingDoor"></Link>}
+                    {image.id === 5 && <Link to="/window"></Link>}
+                    {image.id === 6 && <Link to="/wallFinish"></Link>}
+                    {image.id === 7 && <Link to="/film"></Link>}
+                    {image.id === 8 && <Link to="/builtInCloset"></Link>}
                 </SwiperSlide>
                 ))}
             </Swiper>
             </div>
-        </>
+        </div>
     );
 };
 
